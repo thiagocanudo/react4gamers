@@ -1,5 +1,5 @@
 import React from 'react';
-import { TILE_SIZE, DEMON_TILE, EDirection } from '../../settings/constants';
+import { TILE_SIZE, DEMON_TILE, EDirection, HEAD_OFFSET } from '../../settings/constants';
 
 import './index.css';
 import useEnemyMoviment from '../../hooks/useEnemyMoviment';
@@ -12,7 +12,7 @@ const Demon = () => {
     <div
       style={{
         position: 'absolute',
-        bottom: TILE_SIZE * moviment.position.y,
+        top: TILE_SIZE * moviment.position.y - HEAD_OFFSET,
         left: TILE_SIZE * moviment.position.x,
         width: DEMON_TILE,
         height: DEMON_TILE,

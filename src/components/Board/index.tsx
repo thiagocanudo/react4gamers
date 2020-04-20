@@ -7,16 +7,18 @@ import Trap from '../Trap';
 import Chest from '../Chest';
 
 const Board = () => {
-   return (
-      <div>
-         <MiniDemon />
-         <Hero />
-         <Demon />
-         <Trap />
-         <Chest />
-         <img src="./assets/tileset.gif" width={GAME_SIZE} height={GAME_SIZE} alt="" />
-      </div>
-   );
+  return (
+    <div>
+      <MiniDemon initialPosition={{ x: 10, y: 8 }} />
+      <MiniDemon initialPosition={{ x: 10, y: 10 }} />
+
+      <Hero />
+      <Demon />
+      <Trap />
+      <Chest />
+      <img src="./assets/tileset.gif" width={GAME_SIZE} height={GAME_SIZE} alt="" />
+    </div>
+  );
 }
 
 // crtl + . sobre o GAME_SIZE faz o import da constante.

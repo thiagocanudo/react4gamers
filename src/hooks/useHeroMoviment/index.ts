@@ -11,11 +11,18 @@ function useHeroMoviment(initialPosition) {
     console.log('tecla ativada', event.key);
     /* debugger; */
 
-    const direction = event.key as any;
+    const direction = event.key as EDirection;
+
+    /* if(direction.indexOf('Arrow') === -1){} */
+    if (direction !== EDirection.LEFT && direction !== EDirection.RIGHT && direction !== EDirection.UP && direction !== EDirection.DOWN) {
+      return;
+    }
+
     const nextPosition = handleNextPosition(direction, positionState);
     setPositionState(nextPosition);
     setDirection(direction);
-  })
+
+  });
 
   /*   useEventListener('mouseup', function (e) {
       console.log('Mouse mouseup');
